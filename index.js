@@ -39,9 +39,42 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
+// const PersonOne = new Person ({
+//   name: 'Jonathan',
+//   age: 21,
+// });
+// const PersonTwo = new Person ({
+//   name: 'Halie',
+//   age: 16,
+// });
+// const PersonThree = new Person  ({
+//   name: 'Tachi',
+//   age: 1,
+// });
 
-}
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.stomach= [];
+// }
+// Person.prototype.eat=function(edible){
+//   if (this.stomach.length(10)){
+//     this.stomach.push(edible);
+//   }
+// }
+// Person.prototype.poop = function (){
+//   this.stomach = [];
+// }
+// Person.prototype.toString=function(){
+//   return `${this.name}, ${this.age}`
+// }
+// console.log(PersonOne.toString());
+// console.log(PersonTwo.toString());
+// console.log(PersonThree.toString());
+
+// PersonOne.eat()
+
+
 
 /*
   TASK 2
@@ -50,16 +83,18 @@ function Person() {
         + should initialize with an `tank` at 0
         + should initialize with an `odometer` at 0
     - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
-    - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
-        + Should cause the `odometer` to go up.
-        + Should cause the the `tank` to go down taking `milesPerGallon` into account.
-    - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
-        + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
+
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+this.model = model;
+this.milesPerGallon = milesPerGallon;
 }
+
+let tank = new Car('Nissan');
+
+let odometer = new Car('Nissan');
+
 
 /*
   TASK 3
@@ -68,18 +103,42 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age, toy, action) {
+this.name = name;
+this.age = age;
+this.toy = toy;
+this.action= action;
 
 }
+
+const Person = new Baby({
+name: 'Tomas',
+age:  5,
+toy: 'ball'
+});
+
+const PersonTwo = new Baby ({
+  name: 'Lily',
+  age: 6,
+  toy: 'Doll'
+});
+
+Baby.prototype.favoriteToy = function (){
+console.log(`${this.name} is ${this.age} months old `)
+}
+
+Baby.prototype.play = function (){
+  console.log(`is playing with ${this.toy} `)
+  }
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. can create this
+  2. can call things
+  3. can bind  things
+  4. can print?
 */
 
 
